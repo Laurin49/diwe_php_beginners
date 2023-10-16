@@ -18,10 +18,8 @@ function abort($code = 404): void {
     die();
 }
 
-function routeToController($uri, $routes) {
-    if (array_key_exists($uri, $routes)) {
-        require $routes[$uri];
-    } else {
-        abort(404);
+function authorize($condition, $status = Response::FORBIDDEN) {
+    if (! $condition) {
+        abort($status);
     }
 }
