@@ -12,14 +12,20 @@ function urlIs($value): bool {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function abort($code = 404): void {
-    http_response_code(404);
-    require "views/{$code}.php";
-    die();
-}
-
 function authorize($condition, $status = Response::FORBIDDEN) {
     if (! $condition) {
         abort($status);
     }
+}
+
+function base_path($path)
+{
+    return BASE_PATH . $path;
+}
+
+function view($path, $attributes = [])
+{
+    extract($attributes);
+
+    require base_path('views/' . $path);
 }
