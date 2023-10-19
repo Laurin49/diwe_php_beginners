@@ -6,7 +6,7 @@
             <h1 class="text-2xl font-bold">You are not authorized to view this page.</h1>
 
             <p class="mt-4">
-                <a href="<?php echo '/php2023/php_for_beginners/' ?>" class="text-blue-500 underline">Go back home.</a>
+                <a href="<?php echo '/' ?>" class="text-blue-500 underline">Go back home.</a>
             </p>
         </div>
     </main>
